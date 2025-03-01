@@ -84,17 +84,33 @@ function checkMatch() {
     }
 }
 
+
+
+
+function showPopup() {
+    document.getElementById('popup-message').style.display = 'flex';
+}
+
+// Close the pop-up and restart the game
+function closePopup() {
+    document.getElementById('popup-message').style.display = 'none';
+    matchedCards = [];
+    flippedCards = [];
+    createBoard(); // Reset the game board
+}
+
 // Reset the board after each turn
 function resetBoard() {
     flippedCards = [];
     lockBoard = false;
 
-    if (matchedCards.length === cardsArray.length) {
-        setTimeout(() => {
-            alert('Congratulations! You\'ve matched all the cards!');
-            createBoard(); // Reset the game
-        }, 500);
-    }
+// Update the matching logic
+if (matchedCards.length === cardsArray.length) {
+    setTimeout(() => {
+        showPopup();
+    }, 500);
+}
+
 }
 
 // Start the game
