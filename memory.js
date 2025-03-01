@@ -26,6 +26,8 @@ const gameBoard = document.getElementById('game-board');
 const restartButton = document.getElementById('restart-button');
 const homeButton = document.getElementById('home-button');
 const controls = document.getElementById('controls');
+const logo=document.getElementById('logo_img');
+const homepage=document.getElementById('home_page');
 
 // Shuffle cards
 function shuffleCards() {
@@ -100,8 +102,11 @@ startButton.addEventListener('click', function () {
     gameBoard.style.display = 'grid'; // Show the game board
     controls.style.display = 'block'; // Show the controls (Restart and Home buttons)
     startButton.style.display = 'none'; 
+    logo.style.display='none';
+    homepage.style.marginTop='0%';
     createBoard(); // Create the game board
 });
+
 
 // Restart the game
 restartButton.addEventListener('click', function () {
