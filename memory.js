@@ -26,8 +26,9 @@ const gameBoard = document.getElementById('game-board');
 const restartButton = document.getElementById('restart-button');
 const homeButton = document.getElementById('home-button');
 const controls = document.getElementById('controls');
-const logo=document.getElementById('logo_img');
-const homepage=document.getElementById('home_page');
+const logo= document.getElementById('logo_img');
+const homepage= document.getElementById('home_page');
+const gamebar= document.getElementById('game_bar');
 
 // Shuffle cards
 function shuffleCards() {
@@ -136,5 +137,11 @@ restartButton.addEventListener('click', function () {
 
 // Home button functionality
 homeButton.addEventListener('click', function () {
-    window.location.href = 'file:///D:/memory_game/memory.html'; 
+    gameBoard.style.display = 'none';
+    controls.style.display = 'none'; 
+    startButton.style.display = 'block'; 
+    startButton.style.margin = 'auto'; 
+    logo.style.margin='auto';
+    homepage.style.marginTop='10%';
+    logo.style.display='block';
 });
